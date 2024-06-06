@@ -9,11 +9,12 @@ function Footer() {
                     <div className="row">
                         <div className="col-lg-5 col-md-6 col-sm-6 col-12">
                             <div className="footer-logo-area">
-                                <img className="black-logo" src="assets/images/logo.png" alt="logo" />
+                                <img className="black-logo" src="assets/images/logo_2.png" alt="logo" />
+                                <img className="black-logo-reform" src="assets/images/reform.png" alt="logo" />
                                 {/* <img className="white-logo" src="assets/images/white-logo.png" alt="logo" /> */}
                                 <p className="w-75" >Where Vision Meets Innovation. Crafting Tailored Software That Drives Business Success. Transform Your Ideas into Impactful Realities.
 
-.</p>
+                                    .</p>
                                 {/* <div className="footer-social-icons">
                                     <span>Follow Us:</span>
                                     <ul>

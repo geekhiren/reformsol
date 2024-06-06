@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { getServiceExelDataAction } from "../Redux/actions/ExelDataActions";
+import { getServiceExelDataAction } from "../ReduxStore/actions/ExelDataActions";
 
 
 function BlogDetails({ ServiceDetailsList, getServiceExelDataAction }) {
@@ -18,7 +18,6 @@ function BlogDetails({ ServiceDetailsList, getServiceExelDataAction }) {
         }
     }, [ServiceDetailsList])
 
-    console.log('serviceDetails', serviceDetails)
     return (
         <>
             <div className="uni-banner">
@@ -33,11 +32,12 @@ function BlogDetails({ ServiceDetailsList, getServiceExelDataAction }) {
                 </div>
             </div>
 
+            {serviceDetails ?
             <div className="blog-details ptb-100">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-md-12 col-sm-12 col-12">
-                            <div dangerouslySetInnerHTML={{ __html: serviceDetails?.body }} />
+                            <div dangerouslySetInnerHTML={{ __html: serviceDetails?.body.replaceAll('"','').replaceAll('`','') }} />
                         </div>
                         <div className="col-lg-4 col-md-12 col-sm-12 col-12">
                             <div className="sidebar-area pt-30">
@@ -95,6 +95,11 @@ function BlogDetails({ ServiceDetailsList, getServiceExelDataAction }) {
                     </div>
                 </div>
             </div>
+            :
+            <div className="loader-contaner">
+                <div className="loader"></div>
+            </div>
+}
         </>
     );
 }

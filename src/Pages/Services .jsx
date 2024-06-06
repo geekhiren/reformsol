@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getServiceExelDataAction } from "../Redux/actions/ExelDataActions";
+import { getServiceExelDataAction } from "../ReduxStore/actions/ExelDataActions";
 import { connect } from "react-redux";
 
 function Services({ ServiceDetails, getServiceExelDataAction }) {
@@ -32,7 +32,7 @@ function Services({ ServiceDetails, getServiceExelDataAction }) {
                     </div>
                     <div className="section-content">
                         <div className="row">
-                            {ServiceDetails?.data &&
+                            {ServiceDetails?.data ?
                                 ServiceDetails?.data.map(service => {
                                     return <div className="col-lg-4 col-md-6 col-sm-12 col-12" >
                                         <Link to={'/service/' + service.slug}>
@@ -51,6 +51,9 @@ function Services({ ServiceDetails, getServiceExelDataAction }) {
                                         </Link>
                                     </div>
                                 })
+                                :<div className="loader-contaner">
+                                    <div className="loader"></div>
+                                </div>
                             }
                         </div>
                         {/* <div className="pagination mt-30">

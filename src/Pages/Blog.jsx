@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getBlogExelDataAction } from "../Redux/actions/ExelDataActions";
+import { getBlogExelDataAction } from "../ReduxStore/actions/ExelDataActions";
 
 import { Link } from "react-router-dom";
-function Blogs({BlogDetailsList,getBlogExelDataAction}) {
+function Blogs({ BlogDetailsList, getBlogExelDataAction }) {
     const blogList = [];
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function Blogs({BlogDetailsList,getBlogExelDataAction}) {
                     </div>
                     <div className="section-content">
                         <div className="row justify-content-center">
-                            {BlogDetailsList?.data && BlogDetailsList.data.map(blog =>
+                            {BlogDetailsList?.data ? BlogDetailsList.data.map(blog =>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-12">
                                     <div className="blog-card">
                                         <div className="blog-img">
@@ -52,7 +52,11 @@ function Blogs({BlogDetailsList,getBlogExelDataAction}) {
                                         </div>
                                     </div>
                                 </div>
-                            )}
+                            )
+                                : <div className="loader-contaner">
+                                    <div className="loader"></div>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

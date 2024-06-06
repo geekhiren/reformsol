@@ -14,7 +14,8 @@ function Header() {
                         <div className="container">
                             <div className="mobile-nav">
                                 <Link to="/" className="logo">
-                                    <img className="black-logo" src="assets/images/logo.png" alt="logo" />
+                                    <img className="black-logo" src="assets/images/logo_2.png" alt="logo" />
+                                    <img className="black-logo-reform" src="assets/images/reform.png" alt="logo" />
                                 </Link>
                                 <div className="menu-sidebar-1 menu-small-device">
                                     <div className="call-button">
@@ -30,7 +31,8 @@ function Header() {
                         <div className="container">
                             <nav className="navbar navbar-expand-md navbar-light">
                                 <Link className="navbar-brand" to="/">
-                                    <img className="black-logo" src="assets/images/logo.png" alt="logo" />
+                                    <img className="black-logo" src="assets/images/logo_2.png" alt="logo" />
+                                    <img className="black-logo-reform" src="assets/images/reform.png" alt="logo" />
                                 </Link>
                                 <div className="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                                     <ul className="navbar-nav">
@@ -40,12 +42,12 @@ function Header() {
                                         <li className="nav-item">
                                             <Link to={"/services"} className="nav-link ">Services</Link>
                                         </li>
-                                        <li className="nav-item">
+                                        {/* <li className="nav-item">
                                             <Link to={"/our-team"} className="nav-link ">Our Team</Link>
-                                        </li>
-                                        <li className="nav-item">
+                                        </li> */}
+                                        {/* <li className="nav-item">
                                             <Link to={"/case-study"} className="nav-link ">Case Study</Link>
-                                        </li>
+                                        </li> */}
                                         <li className="nav-item">
                                             <Link to={"/blogs"} className="nav-link ">Blog</Link>
                                         </li>

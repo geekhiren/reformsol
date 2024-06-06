@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { getBlogExelDataAction } from "../Redux/actions/ExelDataActions";
+import { getBlogExelDataAction } from "../ReduxStore/actions/ExelDataActions";
 import { connect } from "react-redux";
 
 function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
@@ -13,7 +13,7 @@ function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
         getBlogExelDataAction()
     }, [])
 
-  
+
     useEffect(() => {
         if (BlogDetailsList) {
             setBlogDetais(BlogDetailsList?.filter(blog => blog.slug == blogSlug.blogSlug)[0]);
@@ -24,7 +24,9 @@ function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
 
     return (
 
-        <>{blogDetais &&
+        <>{blogDetais ?
+
+
             <>
                 <div className="uni-banner">
                     <div className="container">
@@ -101,6 +103,9 @@ function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
                     </div>
                 </div>
             </>
+            : <div className="loader-contaner">
+                <div className="loader"></div>
+            </div>
         }
         </>
     );
