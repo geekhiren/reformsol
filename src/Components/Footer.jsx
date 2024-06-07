@@ -12,9 +12,9 @@ function Footer() {
                                 <img className="black-logo" src="assets/images/logo_2.png" alt="logo" />
                                 <img className="black-logo-reform" src="assets/images/reform.png" alt="logo" />
                                 {/* <img className="white-logo" src="assets/images/white-logo.png" alt="logo" /> */}
-                                <p className="w-75" >Where Vision Meets Innovation. Crafting Tailored Software That Drives Business Success. Transform Your Ideas into Impactful Realities.
-
-                                    .</p>
+                                <p className="w-75" >
+                                    Where Vision Meets Innovation. Crafting Tailored Software That Drives Business Success. Transform Your Ideas into Impactful Realities.
+                                </p>
                                 {/* <div className="footer-social-icons">
                                     <span>Follow Us:</span>
                                     <ul>
@@ -69,7 +69,7 @@ function Footer() {
                                 <div className="footer-content-card">
                                     <i className="fas fa-mobile-alt"></i>
                                     <h5>Phone:</h5>
-                                    <p><a href="tel:+13454567877">+1-3454-5678-77</a></p>
+                                    <p><a href="tel:+919512327005">+91 951-232-7005</a></p>
                                 </div>
                             </div>
                         </div>
@@ -90,12 +90,7 @@ function Footer() {
             </div >
             <div className="copyright bg-f9faff">
                 <div className="container">
-                    <p>Copyright @
-                        <script data-cfasync="false"
-                            src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                        <script>document.write(new Date().getFullYear())</script>. <strong>Izan</strong> All Rights Reserved By
-                        <a target="_blank" href="https://hibootstrap.com/">HiBootstrap</a>
-                    </p>
+                <p>Copyright @{new Date().getFullYear()}. All Rights Reserved By <a target="_blank" href="https://reformsol.com/">Reform Solution</a></p>
                 </div>
             </div>
         </>

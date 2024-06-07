@@ -64,12 +64,12 @@ function Home() {
                     <div className="row align-items-center">
                         <div className="col-lg-6">
                             <div className="banner-text-area-2 pr-20">
-                                <h6>INNOVATE TODAY, SHAPE TOMORROW!</h6>
-                                <h1>Transforming Ideas into Impact</h1>
-                                <p>Where Vision Meets Innovation.
-                                    Crafting Tailored Software That Drives Business Success.
-                                    Transform Your Ideas into Impactful Realities.</p>
-                                <a className="default-button-3" href="#">Our Services <i className="fas fa-long-arrow-alt-right"></i></a>
+                                <h6>Innovate. Integrate. Reform. Your Pathway to Success.</h6>
+                                <h2>Crafting Solutions Beyond Boundaries, Driving Progress Together.</h2>
+                                <p>Reform Solution Pvt. Ltd. – where vision meets execution. With a focus on innovation and a dedication to quality, we're committed to delivering solutions that drive real-world impact. From streamlining processes to enhancing customer experiences, our comprehensive suite of services caters to diverse industry needs. Partner with us and unlock the full potential of your business.</p>
+                                <Link to="/services" className="default-button-3">
+                                    Our Services <i className="fas fa-long-arrow-alt-right"></i>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-6">
@@ -158,7 +158,7 @@ function Home() {
             </div>
 
 
-            <div className="about ptb-100">
+            {/* <div className="about ptb-100">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6">
@@ -185,10 +185,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
-            <div className="features ptb-100 bg-f9faff">
+            {/* <div className="features ptb-100 bg-f9faff">
                 <div className="container">
                     <div className="default-section-title default-section-title-2 default-section-title-middle">
                         <h6>Features</h6>
@@ -265,10 +265,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
-            <div className="intro ptb-100">
+            {/* <div className="intro ptb-100">
                 <div className="container">
                     <div className="intro-content">
                         <div className="shape">
@@ -330,10 +330,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
-            <div className="app-integration pb-100">
+            {/* <div className="app-integration pb-100">
                 <div className="container">
                     <div className="default-section-title default-section-title-2 default-section-title-middle">
                         <h6>APPS</h6>
@@ -373,10 +373,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
-            <div className="testimonial testimonial-2-bg bg-f9faff ptb-100">
+            {/* <div className="testimonial testimonial-2-bg bg-f9faff ptb-100">
                 <div className="container">
                     <div className="default-section-title default-section-title-2 default-section-title-middle">
                         <h6>TESTIMONIALS</h6>
@@ -475,10 +475,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
-            <div className="why-we pt-100">
+            {/* <div className="why-we pt-100">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-5">
@@ -514,10 +514,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
-            <div className="fun-facts pt-70 pb-100">
+            {/* <div className="fun-facts pt-70 pb-100">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg col-md-4 col-sm-4 col-6">
@@ -552,7 +552,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
             <div className="blog ptb-100 bg-f9faff">

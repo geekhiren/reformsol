@@ -24,6 +24,15 @@
   color: white;
 }
 
+.logo {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+}
+
+.logo img {
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
 .App-link {
   color: #61dafb;
 }
