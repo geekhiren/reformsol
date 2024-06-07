@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ReformSol/static/css/main.6923edd5.css",
-    "main.js": "/ReformSol/static/js/main.7d4cfa04.js",
-    "static/js/453.2165bbf8.chunk.js": "/ReformSol/static/js/453.2165bbf8.chunk.js",
+    "main.js": "/ReformSol/static/js/main.ef2242fd.js",
+    "static/js/453.ed5ffd7d.chunk.js": "/ReformSol/static/js/453.ed5ffd7d.chunk.js",
     "index.html": "/ReformSol/index.html",
     "main.6923edd5.css.map": "/ReformSol/static/css/main.6923edd5.css.map",
-    "main.7d4cfa04.js.map": "/ReformSol/static/js/main.7d4cfa04.js.map",
-    "453.2165bbf8.chunk.js.map": "/ReformSol/static/js/453.2165bbf8.chunk.js.map"
+    "main.ef2242fd.js.map": "/ReformSol/static/js/main.ef2242fd.js.map",
+    "453.ed5ffd7d.chunk.js.map": "/ReformSol/static/js/453.ed5ffd7d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6923edd5.css",
-    "static/js/main.7d4cfa04.js"
+    "static/js/main.ef2242fd.js"
   ]
 }
