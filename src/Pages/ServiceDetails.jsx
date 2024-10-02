@@ -13,8 +13,8 @@ function BlogDetails({ ServiceDetailsList, getServiceExelDataAction }) {
     }, [])
 
     useEffect(() => {
-        if (ServiceDetailsList) {
-            setServiceDetails(ServiceDetailsList?.filter(blog => blog.slug == serviceSlug.serviceSlug)[0]);
+        if (ServiceDetailsList?.services) {
+            setServiceDetails(ServiceDetailsList.services?.filter(blog => blog.slug == serviceSlug.serviceSlug)[0]);
         }
     }, [ServiceDetailsList])
 
@@ -49,7 +49,7 @@ function BlogDetails({ ServiceDetailsList, getServiceExelDataAction }) {
                                         </div>
                                     </form>
                                 </div>
-                                <div className="sidebar-card categories mt-30">
+                                {/* <div className="sidebar-card categories mt-30">
                                     <h3>Categories</h3>
                                     <ul>
                                         <li><a className="active" href="#"><i className="fas fa-angle-right"></i>
@@ -89,7 +89,7 @@ function BlogDetails({ ServiceDetailsList, getServiceExelDataAction }) {
                                         <li><a href="#">Planning</a></li>
                                         <li><a href="#">Support</a></li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

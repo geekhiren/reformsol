@@ -15,8 +15,8 @@ function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
 
 
     useEffect(() => {
-        if (BlogDetailsList) {
-            setBlogDetais(BlogDetailsList?.filter(blog => blog.slug == blogSlug.blogSlug)[0]);
+        if (BlogDetailsList?.blogs) {
+            setBlogDetais(BlogDetailsList.blogs?.filter(blog => blog.slug == blogSlug.blogSlug)[0]);
         }
     }, [BlogDetailsList])
 
@@ -56,7 +56,7 @@ function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
                                             </div>
                                         </form>
                                     </div>
-                                    <div className="sidebar-card categories mt-30">
+                                    {/* <div className="sidebar-card categories mt-30">
                                         <h3>Categories</h3>
                                         <ul>
                                             <li><a className="active" href="#"><i className="fas fa-angle-right"></i>
@@ -96,7 +96,7 @@ function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
                                             <li><a href="#">Planning</a></li>
                                             <li><a href="#">Support</a></li>
                                         </ul>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

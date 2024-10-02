@@ -32,8 +32,8 @@ function Services({ ServiceDetails, getServiceExelDataAction }) {
                     </div>
                     <div className="section-content">
                         <div className="row">
-                            {ServiceDetails?.data ?
-                                ServiceDetails?.data.map(service => {
+                            {ServiceDetails?.data?.services ?
+                                ServiceDetails?.data.services.map(service => {
                                     return <div className="col-lg-4 col-md-6 col-sm-12 col-12" >
                                         <Link to={'/service/' + service.slug}>
                                             <div className="service-card-2">
@@ -51,7 +51,7 @@ function Services({ ServiceDetails, getServiceExelDataAction }) {
                                         </Link>
                                     </div>
                                 })
-                                :<div className="loader-contaner">
+                                : <div className="loader-contaner">
                                     <div className="loader"></div>
                                 </div>
                             }
