@@ -1,97 +1,163 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import header_logo2 from "../assets/img/logo/mainLogo2.png"
+import footer1_icon1 from "../assets/img/icons/footer1-icon1.png"
+import footer1_icon2 from "../assets/img/icons/footer1-icon2.png"
+import footer1_icon3 from "../assets/img/icons/footer1-icon3.png"
+import footer1_icon4 from "../assets/img/icons/footer1-icon4.png"
 function Footer() {
     return (
         <>
-            <div className="go-top"><i className="fab fa-airbnb"></i></div>
-            <div className="footer ptb-100 bg-f9faff">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-5 col-md-6 col-sm-6 col-12">
-                            <div className="footer-logo-area">
-                                <img className="black-logo" src="assets/images/logo_2.png" alt="logo" />
-                                <img className="black-logo-reform" src="assets/images/reform.png" alt="logo" />
-                                {/* <img className="white-logo" src="assets/images/white-logo.png" alt="logo" /> */}
-                                <p className="w-75" >
-                                    Where Vision Meets Innovation. Crafting Tailored Software That Drives Business Success. Transform Your Ideas into Impactful Realities.
-                                </p>
-                                {/* <div className="footer-social-icons">
-                                    <span>Follow Us:</span>
-                                    <ul>
-                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                            className="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://www.linkedin.com/" target="_blank"><i
-                                            className="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="https://twitter.com/" target="_blank"><i className="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li><a href="https://www.instagram.com/" target="_blank"><i
-                                            className="fab fa-instagram"></i></a></li>
-                                    </ul>
-                                </div> */}
-                            </div>
-                        </div>
-
-                        {/*<div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                            <div className="footer-links footer-quick-links">
-                                <h3>Quick Links</h3>
-                                <ul>
-                                    <li><Link to="about.html" target="_blank"><i className="fas fa-angle-right"></i>
-                                        <span>About</span></Link></li>
-                                    <li><Link to="/services" target="_blank"><i className="fas fa-angle-right"></i> <span>Our
-                                        Services</span></Link></li>
-                                    <li><Link to="/case-study" target="_blank"><i className="fas fa-angle-right"></i>
-                                        <span>Case Study</span></Link></li>
-                                    <li><Link to="/our-team" target="_blank"><i className="fas fa-angle-right"></i> <span>Our
-                                        Team</span></Link></li>
-                                    <li><Link to="/blogs" target="_blank"><i className="fas fa-angle-right"></i> <span>Our
-                                        Blog</span></Link></li>
-                                </ul>
-                            </div> 
-                        </div>*/}
-                        <div className="col-lg-4 col-md-6 col-sm-6 col-12">
-                            <div className="footer-links footer-contact-list">
-                                <h3>Get In Touch</h3>
-                                {/* <div className="footer-content-card">
-                                    <i className="fas fa-map-marker-alt"></i>
-                                    <h5>Location:</h5>
-                                    <p><a href="https://goo.gl/maps/LFFvE4dNnyq67gGeA">2976 Sunrise Avenue, Las Vegas, USA</a>
-                                    </p>
-                                </div> */}
-                                <div className="footer-content-card">
-                                    <i className="fas fa-envelope"></i>
-                                    <h5>Email:</h5>
-                                    <p><a
-                                        href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#0f7c7a7f7f607d7b4f66756e61216c6062"><span
-                                            className="__cf_email__"
-                                            data-cfemail="483b3d3838273a3c0821322926662b2725">support@reformsol.com</span></a>
-                                    </p>
-                                </div>
-                                <div className="footer-content-card">
-                                    <i className="fas fa-mobile-alt"></i>
-                                    <h5>Phone:</h5>
-                                    <p><a href="tel:+919512327005">+91 951-232-7005</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <div className="footer-links footer-newsletter">
-                                <h3>Subscribe</h3>
-                                <p>Subscribe To Our Newsletter To Get Our Update News!</p>
-                                <form>
-                                    <div className="input-group">
-                                        <input type="text" className="form-control" placeholder="Your Email" />
-                                        <button className="btn" type="submit"><i className="far fa-paper-plane"></i></button>
+            <div className="bottom-circle">
+                <div className="cta2">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-8 m-auto text-center"  data-aos="fade-up" data-aos-duration="900">
+                                <div className="heading2">
+                                    <h2 className="title tg-element-title"> We're Committed To Businesses</h2>
+                                    <div className="space16"></div>
+                                    <p>At Reformsol IT Solutions, we're dedicated to delivering innovative technology solutions tailored to meet
+                                        the unique needs of businesses like yours. </p>
+                                    <div className="row">
+                                        <div className="col-lg-8 m-auto">
+                                            <div className="subscribe-form">
+                                                <form action="#">
+                                                    <input type="email" placeholder="Enter Your Email" />
+                                                    <div className="button">
+                                                        <button type="submit" className="theme-btn2">Subscribe <span className="arrow1"><i
+                                                            className="fa-solid fa-arrow-right"></i></span><span className="arrow2"><i
+                                                                className="fa-solid fa-arrow-right"></i></span></button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div >
-            <div className="copyright bg-f9faff">
-                <div className="container">
-                <p>Copyright @{new Date().getFullYear()}. All Rights Reserved By <a target="_blank" href="https://reformsol.com/">Reform Solution</a></p>
+
+                <div className="footer2 _relative">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-4 col-md-6 col-12">
+                                <div className="single-footer-items footer-logo-area">
+                                    <div className="footer-logo">
+                                        <Link to="/">
+                                            <img src={header_logo2} alt="" />
+                                        </Link>
+                                    </div>
+                                    <div className="space20"></div>
+                                    <div className="heading2">
+                                        <p>At Reformsol IT Solutions, we're dedicated to delivering innovative technology solutions tailored to meet
+                                            the unique needs of businesses like yours. </p>
+                                    </div>
+                                    <ul className="social-icon">
+                                        <li><Link href="#"><i className="fa-brands fa-linkedin-in"></i></Link></li>
+                                        <li><Link href="#"><i className="fa-brands fa-x-twitter"></i></Link></li>
+                                        <li><Link href="#"><i className="fa-brands fa-youtube"></i></Link></li>
+                                        <li><Link href="#"><i className="fa-brands fa-instagram"></i></Link></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="col-lg col-md-6 col-12">
+                                <div className="single-footer-items">
+                                    <h3>Service We Offer</h3>
+
+                                    <ul className="menu-list">
+                                        <li><Link href="#">Cloud Computing Solution</Link></li>
+                                        <li><Link href="#">Cybersecurity & Compliance</Link></li>
+                                        <li><Link href="#">Software Development</Link></li>
+                                        <li><Link href="#">It Consulting & Support</Link></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="col-lg col-md-6 col-12">
+                                <div className="single-footer-items pl-5">
+                                    <h3>Useful Links</h3>
+
+                                    <ul className="menu-list">
+                                        <li><Link to="/about">About Us </Link></li>
+                                        <li><Link to="/services">Our Services</Link></li>
+                                        <li><Link to="/blogs">Blog & News</Link></li>
+                                        <li><Link to="/contact">Contact Us</Link></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <div className="single-footer-items">
+                                    <h3>Contact Us</h3>
+
+                                    <div className="contact-box">
+                                        <div className="icon">
+                                            <img src={footer1_icon1} alt="" />
+                                        </div>
+                                        <div className="pera">
+                                            <a href="tel:0500222333">0500 222 333</a>
+                                        </div>
+                                    </div>
+
+                                    <div className="contact-box">
+                                        <div className="icon">
+                                            <img src={footer1_icon2} alt="" />
+                                        </div>
+                                        <div className="pera">
+                                            <a href="tel:0356588547">03 5658 8547</a>
+                                        </div>
+                                    </div>
+
+                                    <div className="contact-box">
+                                        <div className="icon">
+                                            <img src={footer1_icon3} alt="" />
+                                        </div>
+                                        <div className="pera">
+                                            <a href="mailto:admin@reformsol.com">admin@reformsol.com</a>
+                                        </div>
+                                    </div>
+
+                                    <div className="contact-box">
+                                        <div className="icon">
+                                            <img src={footer1_icon4} alt="" />
+                                        </div>
+                                        <div className="pera">
+                                            <a href="mailto:admin@reformsol.com">www.reformsol.com</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div className="space70"></div>
+                    </div>
+
+                    <div className="copyright-area _relative">
+                        <div className="container">
+                            <div className="row align-items-center">
+                                <div className="col-md-5">
+                                    <div className="coppyright">
+                                        <p>Copyright @2025 reformsol.All Rights Reserved</p>
+                                    </div>
+                                </div>
+                                <div className="col-md-7">
+                                    <div className="coppyright right-area">
+                                        <Link to="#">Terms & Conditions</Link>
+                                        <Link to="#">Privacy Policy</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" className="arrow-up"><i className="fa-solid fa-arrow-up"></i></a>
+                    </div>
+
                 </div>
+
             </div>
         </>
     );

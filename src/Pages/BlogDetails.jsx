@@ -1,104 +1,107 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { getBlogExelDataAction } from "../ReduxStore/actions/ExelDataActions";
 import { connect } from "react-redux";
+import CommonHero from "../Components/CommonHero.jsx"
+import dateIcon from "../assets/img/icons/date.png"
 
-function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
+function BlogDetails({ blogsList, tagList, servicesList, }) {
 
     let blogSlug = useParams();
 
     const [blogDetais, setBlogDetais] = useState();
-    useEffect(() => {
-        getBlogExelDataAction()
-    }, [])
-
 
     useEffect(() => {
-        if (BlogDetailsList?.blogs) {
-            setBlogDetais(BlogDetailsList.blogs?.filter(blog => blog.slug == blogSlug.blogSlug)[0]);
+        if (blogsList?.length > 0) {
+            setBlogDetais(blogsList.find(blog => blog.slug.toLowerCase() == blogSlug.blogSlug.toLowerCase()))
         }
-    }, [BlogDetailsList])
-
-
+    }, [blogsList])
 
     return (
 
         <>{blogDetais ?
 
-
             <>
-                <div className="uni-banner">
-                    <div className="container">
-                        <div className="uni-banner-text-area">
-                            <h3 className="text-white ">{blogDetais.title}</h3>
-                            <ul>
-                                <li><Link href="/">Home</Link></li>
-                                <li>Blog Details</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <CommonHero mainTitle={blogDetais.title} subTitle={""} showBreadCrumb={false} />
 
                 <div className="blog-details ptb-100">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-8 col-md-12 col-sm-12 col-12">
+                            {/* {blogDetais.details.map(item =>
+                             
+                            )} */}
+                            <div className="col-lg-8 col-md-8 col-sm-12 col-12 text-white">
                                 <div dangerouslySetInnerHTML={{ __html: blogDetais.body }} />
                             </div>
-                            <div className="col-lg-4 col-md-12 col-sm-12 col-12">
-                                <div className="sidebar-area pt-30">
-                                    <div className="sidebar-card search-box">
-                                        <form>
-                                            <div className="input-group">
-                                                <input type="text" className="form-control" placeholder="Search Here.." required />
-                                                <button className="btn" type="submit"><i className="fas fa-search"></i></button>
+                            <div className="col-lg-4 col-md-4 col-sm-12 col-12 text-white">
+
+                                {/* <div class="sidebar-box-area mb-40">
+                                    <h3>Search by Keyword</h3>
+                                    <div class="search">
+                                        <input type="text" placeholder="Type keyword here" />
+                                        <div class="button">
+                                            <button><i class="fa-regular fa-magnifying-glass"></i></button>
+                                        </div>
+                                    </div>
+                                </div> */}
+
+                                <div class="sidebar-box-area sidebar-bg mb-40">
+                                    <h3>Recent Blogs</h3>
+                                    <div class="sidebar-blog-boxs">
+                                        {blogsList.length > 0 && blogsList.slice(0, 5)?.map(blog =>
+                                            <div className="blog2-box" >
+                                                <div className="image">
+                                                    <img src={blog.img} alt="" />
+                                                </div>
+                                                <div className="heading2">
+                                                    {/* <div className="tags">
+                                                <a href="#" className="date"><img src={date} alt="" /> 10/02/2024</a>
+                                                <a href="#" className="date outhor"><img src={user} alt="" /> Ben Cutting</a>
+                                            </div> */}
+                                                    <h4><Link to={'/blog/' + blog.slug.toLowerCase()}>{blog.title}</Link></h4>
+                                                    <div className="space16"></div>
+                                                    {/* <p>We explore the growing trend of remote work and its implications for cybersecurity.</p> */}
+                                                    {/* <div className="space16"></div> */}
+                                                    <Link to={'/blog/' + blog.slug.toLowerCase()} className="learn text-white ">Read More <span><i className="fa-solid fa-arrow-right"></i></span></Link>
+                                                </div>
                                             </div>
-                                        </form>
+                                        )}
                                     </div>
-                                    {/* <div className="sidebar-card categories mt-30">
-                                        <h3>Categories</h3>
-                                        <ul>
-                                            <li><a className="active" href="#"><i className="fas fa-angle-right"></i>
-                                                Business</a></li>
-                                            <li><a href="#"><i className="fas fa-angle-right"></i> Research</a></li>
-                                            <li><a href="#"><i className="fas fa-angle-right"></i> Development</a></li>
-                                            <li><a href="#"><i className="fas fa-angle-right"></i> Branding</a></li>
-                                            <li><a href="#"><i className="fas fa-angle-right"></i> Marketing</a></li>
-                                            <li><a href="#"><i className="fas fa-angle-right"></i> Support</a></li>
-                                        </ul>
+                                </div>
+                                <div class="sidebar-box-area sidebar-bg mb-40">
+                                    <h3>Our Services</h3>
+                                    <ul class="features-list">
+                                        {servicesList?.length > 0 && servicesList?.map(service =>
+                                            <li>
+                                                <a href="#">{service.title} <span>
+                                                    <i class="fa-regular fa-angle-right"></i>
+                                                </span>
+                                                </a>
+                                            </li>
+                                        )}
+                                    </ul>
+                                </div>
+
+                                {/* <div class="sidebar-box-area sidebar-bg mb-40">
+                                    <h3>Tags</h3>
+                                    <ul class="tags">
+                                        {tagList.length > 0 && tagList?.map(tag =>
+                                            <li><a href="#">{tag}</a></li>
+                                        )}
+
+                                    </ul>
+                                </div> */}
+                                <div class="sidebar-box-area sidebar-bg mb-40">
+                                    <h3>Download Brochure</h3>
+                                    <p>With a focus on excellence  &  commitment to exceeding expectations, our experienced team is here to empower Solution.</p>
+                                    <div class="download-btns">
+                                        <a class="daownload1" href="#">PDF Download <img src="assets/img/icons/download-img.png" alt="" /></a>
+                                        <a class="daownload2" href="#">DOC Download <img src="assets/img/icons/download-img.png" alt="" /></a>
                                     </div>
-                                    <div className="sidebar-card recent-news">
-                                        <h3>Recent News</h3>
-                                        <div className="recent-news-card">
-                                            <img src="assets/images/inner-pages/bds1.jpg" alt="image" />
-                                            <h5><a href="#">Some Important Rules To A New Business</a></h5>
-                                            <p>5th Jun 2021</p>
-                                        </div>
-                                        <div className="recent-news-card">
-                                            <img src="assets/images/inner-pages/bds2.jpg" alt="image" />
-                                            <h5><a href="#">Why Would You Need Some New Business</a></h5>
-                                            <p>4th Jun 2021</p>
-                                        </div>
-                                        <div className="recent-news-card">
-                                            <img src="assets/images/inner-pages/bds3.jpg" alt="image" />
-                                            <h5><a href="#">Know Top Ten Rules For Corporate Business</a></h5>
-                                            <p>2nd Jun 2021</p>
-                                        </div>
-                                    </div>
-                                    <div className="sidebar-card sd-tag">
-                                        <h3>Tags</h3>
-                                        <ul>
-                                            <li><a href="#">Marketing</a></li>
-                                            <li><a href="#">Strategy</a></li>
-                                            <li><a href="#">Research</a></li>
-                                            <li><a href="#">Branding</a></li>
-                                            <li><a href="#">Planning</a></li>
-                                            <li><a href="#">Support</a></li>
-                                        </ul>
-                                    </div> */}
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -113,13 +116,9 @@ function BlogDetails({ BlogDetailsList, getBlogExelDataAction }) {
 
 const mapStateToProps = (state) => {
     return {
-        BlogDetailsList: state.BlogExelDataReducer?.data,
+        blogsList: state.ExelDataReducer?.data?.blogs || [],
+        tagList: state.ExelDataReducer?.data?.tags || [],
+        servicesList: state.ExelDataReducer?.data?.services || [],
     };
 };
-
-export default connect(
-    mapStateToProps,
-    {
-        getBlogExelDataAction
-    }
-)(BlogDetails);
+export default connect(mapStateToProps, {})(BlogDetails);

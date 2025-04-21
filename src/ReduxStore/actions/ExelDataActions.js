@@ -20,18 +20,18 @@ const getServiceExelDataAction = () => {
 };
 
 // get Exel Data Actions
-const getBlogExelDataAction = () => {
+const getDataAction = () => {
   return (Dispatch) => {
-    Dispatch({ type: ActionTypes.GET_BLOG_EXEL_DATA_REQUEST, })
+    Dispatch({ type: ActionTypes.GET_DATA_REQUEST, })
     getService(BLOGS_BASE_URL).then(
       (response) => {
         if (response) {
-          return Dispatch({ type: ActionTypes.GET_BLOG_EXEL_DATA_LIST_SUCESS, data: response })
+          return Dispatch({ type: ActionTypes.GET_DATA_LIST_SUCESS, data: response })
         }
-        else { return Dispatch({ type: ActionTypes.GET_BLOG_EXEL_DATA_LIST_FAIL, data: response }) }
+        else { return Dispatch({ type: ActionTypes.GET_DATA_LIST_FAIL, data: response }) }
       },
       (error) => {
-        return Dispatch({ type: ActionTypes.GET_BLOG_EXEL_DATA_LIST_FAIL, data: error })
+        return Dispatch({ type: ActionTypes.GET_DATA_LIST_FAIL, data: error })
       }
     )
   }
@@ -65,5 +65,5 @@ function removeCommas(str) {
 
 export {
   getServiceExelDataAction,
-  getBlogExelDataAction
+  getDataAction
 }

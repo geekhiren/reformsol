@@ -20,3 +20,14 @@ code {
   color: #0064fbc9;
   text-decoration: none;
 }
+
+.contact-boxs .contact-box img {
+  padding-top: 0.6rem;
+}
+
+@media (max-width:992px) {
+
+  .comon-body .common-hero {
+    min-height: 275px;
+  }
+}

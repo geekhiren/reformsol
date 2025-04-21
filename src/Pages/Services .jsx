@@ -1,85 +1,126 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getServiceExelDataAction } from "../ReduxStore/actions/ExelDataActions";
 import { connect } from "react-redux";
 
-function Services({ ServiceDetails, getServiceExelDataAction }) {
+import span2 from "../assets/img/icons/span2.png"
+import mainIconSmall from "../assets/img/logo/main_icon_small.png"
+import service2_icon1 from "../assets/img/icons/service2-icon1.png"
+import about2_img1 from "../assets/img/about/about2-img1.png"
+import about2_img2 from "../assets/img/about/about2-img2.png"
+import about2_img3 from "../assets/img/about/about2-img3.png"
 
-    useEffect(() => {
-        getServiceExelDataAction()
-    }, [])
+import CommonHero from "../Components/CommonHero.jsx"
 
-    console.log('ServiceDetails', ServiceDetails)
+function Services({ servicesList }) {
 
     return (
         <>
-            <div className="uni-banner">
+            <CommonHero mainTitle={"Our Service"} subTitle={"Service"} />
+
+            <div className="servcie2">
                 <div className="container">
-                    <div className="uni-banner-text-area">
-                        <h1>Our Services</h1>
-                        <ul>
-                            <li><Link href="/">Home</Link></li>
-                            <li>Services</li>
-                        </ul>
+                    <div className="row" >
+                        {servicesList?.services?.map(service =>
+                            <div className="col-lg-4 col-md-6" data-aos="flip-up" data-aos-duration="1000">
+                                <div className="">
+                                    <div className="servcie2-box ">
+                                        <div className="icon">
+                                            <img src={service.img} alt="" />
+                                        </div>
+                                        <Link to={`/service/${service?.slug?.toLocaleLowerCase()}`} className="arrow"><i className="fa-solid fa-arrow-right"></i></Link>
+                                        <div className="heading2">
+                                            <h4><Link to={`/service/${service?.slug?.toLocaleLowerCase()}`}>{service.title}</Link></h4>
+                                            <div className="space16"></div>
+                                            <p>Strategic IT planning roadmap development Business process analysis and improvement for It solution &
+                                                technology.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                </div>
+            </div>
+
+            <div className="space100"></div>
+
+            <div className="about2">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-lg-6">
+                            <div className="about2-images">
+                                <div className="image1" data-aos="zoom-in-right" data-aos-duration="800">
+                                    <img src={about2_img1} alt="" />
+                                </div>
+                                <div className="image2 reveal image-anime" data-aos="flip-left" data-aos-duration="800">
+                                    <img src={about2_img2} alt="" />
+                                </div>
+                                <div className="image3" data-aos="zoom-in-left" data-aos-duration="900">
+                                    <img src={about2_img3} alt="" />
+                                </div>
+                                <div className="counter-box" data-aos="flip-left" data-aos-duration="700">
+                                    <h3>25</h3>
+                                    <p>Years Of <br /> Experience</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-6">
+                            <div className="heading2">
+                                <span className="span" data-aos="zoom-in-left" data-aos-duration="700">
+                                    <img src={mainIconSmall} alt="" /> Our Service</span>
+                                <h2 className="title tg-element-title" data-aos="zoom-in-left" data-aos-duration="700">Empower Your Business With Our Comprehensive IT Solutions</h2>
+                                <div className="space16"></div>
+                                <p data-aos="fade-up-left" data-aos-duration="700">Welcome to Reformsol, your premier destination for cutting-edge technology solutions and IT services. At
+                                    Reformsol, we are passionate about harnessing the power of technology to empower businesses a like.</p>
+
+                                <div className="space10"></div>
+
+                                <div className="porgress-line-all" data-aos="fade-up-left" data-aos-duration="900">
+                                    <div className="progress-line">
+
+                                        <h6>IT Consulting</h6>
+                                        <div className="progress1" data-init="true">
+                                            <div className="percentCount">100%</div>
+                                            <div className="progressbar" >
+                                                <div className="proggress" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="progress-line">
+                                        <h6>Cyber Security</h6>
+                                        <div className="progress2" data-init="true">
+                                            <div className="percentCount">90%</div>
+                                            <div className="progressbar" >
+                                                <div className="proggress" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="space30"></div>
+                                <div className="button" data-aos="fade-up-left" data-aos-duration="900">
+                                    <Link className="theme-btn2" to="/about">Learn More <i className="fa-solid fa-arrow-right"></i></Link>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="service ptb-100">
-                <div className="container">
-                    <div className="default-section-title default-section-title-2 default-section-title-middle">
-                        <h6>Services</h6>
-                        <h3>We Are The Best Software Company In This Area</h3>
-                    </div>
-                    <div className="section-content">
-                        <div className="row">
-                            {ServiceDetails?.data?.services ?
-                                ServiceDetails?.data.services.map(service => {
-                                    return <div className="col-lg-4 col-md-6 col-sm-12 col-12" >
-                                        <Link to={'/service/' + service.slug}>
-                                            <div className="service-card-2">
-                                                <span></span>
-                                                <div className="service-card-content">
-                                                    <div className="service-card-2-img">
-                                                        <img src="assets/images/icons/011-content-1.png" alt="image" />
-                                                    </div>
-                                                    <h4>{service.title}</h4>
-                                                    <p>{service.description}</p>
-                                                    {/* <a className="default-button-3 default-button-3-h" href="#">Read More <i
-                                            className="fas fa-long-arrow-alt-right"></i></a> */}
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                })
-                                : <div className="loader-contaner">
-                                    <div className="loader"></div>
-                                </div>
-                            }
-                        </div>
-                        {/* <div className="pagination mt-30">
-                            <ul>
-                                <li className="active">1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>i className="fas fa-arrow-right"></i></li>
-                            </ul>
-                        </div> */}
-                    </div>
-                </div>
-            </div >
+            <div className="space100"></div>
+
         </>
     );
 }
 
 const mapStateToProps = (state) => {
     return {
-        ServiceDetails: state.ServiceExelDataReducer,
+        servicesList: state.ExelDataReducer?.data || [],
     };
 };
 
-export default connect(
-    mapStateToProps,
-    {
-        getServiceExelDataAction
-    }
-)(Services);
+export default connect(mapStateToProps, {})(Services);

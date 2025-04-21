@@ -15,7 +15,6 @@ function OurTeam() {
                 </div>
             </div>
 
-
             <div className="team ptb-100">
                 <div className="container">
                     <div className="default-section-title default-section-title-middle">

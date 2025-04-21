@@ -1,80 +1,223 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ScrollToTop from "./ScrollToTop";
-function Header() {
+
+import header_logo2 from "../assets/img/logo/mainLogo2.png"
+import footer1_icon1 from "../assets/img/icons/footer1-icon1.png"
+import footer1_icon2 from "../assets/img/icons/footer1-icon2.png"
+import footer1_icon3 from "../assets/img/icons/footer1-icon3.png"
+import footer1_icon4 from "../assets/img/icons/footer1-icon4.png"
+
+import { getDataAction } from "../ReduxStore/actions/ExelDataActions";
 
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { connect } from "react-redux";
+
+
+function Header({ getDataAction, }) {
+
+    const [showMobileNavigation, setShowMobileNavigation] = useState(false)
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setShowMobileNavigation(false)
+    }, [pathname]);
+
+    useEffect(() => {
+        getDataAction()
+    }, [])
 
     return (
         <>
-            <ScrollToTop />
-            <div className="header-area header-area-2">
-                <div className="navbar-area">
-                    <div className="main-responsive-nav">
-                        <div className="container">
-                            <div className="mobile-nav">
-                                <Link to="/" className="logo">
-                                    <img className="black-logo" src="assets/images/logo_2.png" alt="logo" />
-                                    <h1 className="mt-2" style={{ fontWeight: 'bold', color: 'black' }}>Reform Sol.</h1>
-                                </Link>
-                                <div className="menu-sidebar-1 menu-small-device">
-                                    <div className="call-button">
-                                        <i className="fas fa-headset"></i>
-                                        <p>Have Any <span>Questions?</span></p>
-                                        <a href="tel:+919512327005">+91 951-232-7005</a>
+            {/* <section>
+                <div id="preloader">
+                    <div id="ctn-preloader" className="ctn-preloader ctn-preloader1">
+                        <div className="animation-preloader">
+                            <div className="spinner"></div>
+                            <div className="txt-loading">
+                                <span data-text-preloader="T" className="letters-loading">
+                                    T
+                                </span>
+                                <span data-text-preloader="E" className="letters-loading">
+                                    E
+                                </span>
+                                <span data-text-preloader="C" className="letters-loading">
+                                    C
+                                </span>
+                                <span data-text-preloader="H" className="letters-loading">
+                                    H
+                                </span>
+                                <span data-text-preloader="X" className="letters-loading">
+                                    X
+                                </span>
+                                <span data-text-preloader="E" className="letters-loading">
+                                    E
+                                </span>
+                                <span data-text-preloader="N" className="letters-loading">
+                                    N
+                                </span>
+                            </div>
+                        </div>
+                        <div className="loader-section-left loader-section section-left"></div>
+                        <div className="loader-section-right loader-section section-right"></div>
+                    </div>
+                </div>
+            </section> */}
+            <header>
+                <div className="header-area header-area2 header-area-all d-none d-lg-block" id="header">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="header-elements">
+                                    <div className="site-logo">
+                                        <Link to="/">
+                                            <img src={header_logo2} alt="" />
+                                        </Link>
+                                    </div>
+
+                                    <div className="main-menu-ex main-menu-ex1">
+                                        <ul>
+
+                                            <li><Link to="/">Home </Link></li>
+
+                                            <li><Link to="/about">About</Link></li>
+
+                                            <li><Link to="/services">Service</Link></li>
+
+                                            <li><Link to="/blogs">Blog</Link></li>
+
+                                            <li><Link to="/project">Project</Link></li>
+
+                                        </ul>
+                                    </div>
+
+                                    <div className="header2-buttons">
+
+                                        <div className="header-search-form-wrapper">
+                                            <div className="tx-search-close tx-close"><i className="fa-solid fa-xmark"></i></div>
+                                            <div className="header-search-container">
+                                                <form role="search" className="search-form">
+                                                    <input type="search" className="search-field" placeholder="Search …" name="s" />
+                                                    <button type="submit" className="search-submit"><i className="fa-solid fa-magnifying-glass"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div className="body-overlay"></div>
+                                        <div className="button">
+                                            <Link className="theme-btn2" to="/contact">Get A Quote
+                                                <span className="arrow1"><i className="fa-solid fa-arrow-right"></i></span>
+                                                <span className="arrow2"><i className="fa-solid fa-arrow-right"></i></span>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="main-nav">
-                        <div className="container">
-                            <nav className="navbar navbar-expand-md navbar-light">
-                                <Link className="navbar-brand" to="/">
-                                    <div className="logo">
-                                        <img className="black-logo" src="assets/images/logo_2.png" alt="logo" />
-                                        <h1 className="mt-2" style={{ fontWeight: 'bold', color: 'black' }}>Reform Sol.</h1>
-                                    </div>
-                                    {/* <img className="black-logo-reform" src="assets/images/reform.png" alt="logo" /> */}
-                                </Link>
-                                <div className="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                                    <ul className="navbar-nav">
-                                        <li className="nav-item plus-icon">
-                                            <Link to={'/'} className="nav-link">Home</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to={"/services"} className="nav-link">Services</Link>
-                                        </li>
-                                        {/* <li className="nav-item">
-                                            <Link to={"/our-team"} className="nav-link ">Our Team</Link>
-                                        </li> */}
-                                        {/* <li className="nav-item">
-                                            <Link to={"/case-study"} className="nav-link ">Case Study</Link>
-                                        </li> */}
-                                        <li className="nav-item">
-                                            <Link to={"/blogs"} className="nav-link">Blog</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to={"/contact"} className="nav-link">Contact Us</Link>
-                                        </li>
-                                    </ul>
-                                    <div className="menu-sidebar menu-sidebar-1">
-                                        <Link className="default-button-3 default-button-3-h" to={"/contact"}>Get Started <i className="fas fa-long-arrow-alt-right"></i></Link>
-                                        <div className="call-button">
-                                            <i className="fas fa-headset"></i>
-                                            <p>Have Any <span>Questions?</span></p>
-                                            <a href="tel:+919512327005">+91 951-232-7005</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </nav>
+                </div>
+            </header>
+
+            <div className="mobile-header mobile-header-main d-block d-lg-none ">
+                <div className="container-fluid">
+                    <div className="col-12">
+                        <div className="mobile-header-elements">
+                            <div className="mobile-logo">
+                                <Link to="/"><img src={header_logo2} alt="" /></Link>
+                            </div>
+                            <div className="mobile-nav-icon" onClick={() => { setShowMobileNavigation(true) }}>
+                                <i className="fa-duotone fa-bars-staggered"></i>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div className={`mobile-sidebar d-block d-lg-none ${showMobileNavigation ? 'mobile-menu-active' : ''}`}>
+                <div className="logo-m">
+                    <Link to="/"><img src={header_logo2} alt="" /></Link>
+                </div>
+                <div className="menu-close">
+                    <i className="fa-solid fa-xmark"></i>
+                </div>
+                <div className="mobile-nav">
+
+                    <ul>
+                        <li><Link to="/">Home </Link></li>
+
+                        <li><Link to="/about">About</Link></li>
+
+                        <li><Link to="/services">Service</Link></li>
+
+                        <li><Link to="/blogs">Blog</Link></li>
+
+                        <li><Link to="/project">Project</Link></li>
+                    </ul>
+
+                    <div className="mobile-button">
+                        <Link className="theme-btn2" to="/services">Learn More <span><i className="fa-solid fa-arrow-right"></i></span></Link>
+                    </div>
+
+                    <div className="single-footer-items">
+                        <h3>Contact Us</h3>
+
+                        <div className="contact-box">
+                            <div className="icon">
+                                <img src={footer1_icon1} alt="" />
+                            </div>
+                            <div className="pera">
+                                <a href="tel:0500222333">0500 222 333</a>
+                            </div>
+                        </div>
+
+                        <div className="contact-box">
+                            <div className="icon">
+                                <img src={footer1_icon2} alt="" />
+                            </div>
+                            <div className="pera">
+                                <a href="tel:0356588547">03 5658 8547</a>
+                            </div>
+                        </div>
+
+                        <div className="contact-box">
+                            <div className="icon">
+                                <img src={footer1_icon3} alt="" />
+                            </div>
+                            <div className="pera">
+                                <a href="mailto:admin@reformsol.com">admin@reformsol.com</a>
+                            </div>
+                        </div>
+
+                        <div className="contact-box">
+                            <div className="icon">
+                                <img src={footer1_icon4} alt="" />
+                            </div>
+                            <div className="pera">
+                                <a href="mailto:admin@reformsol.com">www.reformsol.com</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="contact-infos">
+                        <h3>Our Location</h3>
+                        <ul className="social-icon">
+                            <li><Link href="#"><i className="fa-brands fa-linkedin-in"></i></Link></li>
+                            <li><Link href="#"><i className="fa-brands fa-x-twitter"></i></Link></li>
+                            <li><Link href="#"><i className="fa-brands fa-youtube"></i></Link></li>
+                            <li><Link href="#"><i className="fa-brands fa-instagram"></i></Link></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
         </>
     );
 }
+const mapStateToProps = (state) => {
+    return {};
+};
 
-export default Header;
+export default connect(mapStateToProps, { getDataAction })(Header);
+
