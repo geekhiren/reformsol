@@ -15,7 +15,7 @@ import { useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 
 
-function Header({ getDataAction, }) {
+function Header({ getDataAction, dataList }) {
 
     const [showMobileNavigation, setShowMobileNavigation] = useState(false)
     const { pathname } = useLocation();
@@ -216,7 +216,9 @@ function Header({ getDataAction, }) {
     );
 }
 const mapStateToProps = (state) => {
-    return {};
+    return {
+        dataList: state.ExelDataReducer
+    };
 };
 
 export default connect(mapStateToProps, { getDataAction })(Header);

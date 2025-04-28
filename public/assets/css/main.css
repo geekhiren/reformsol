@@ -315,6 +315,16 @@ body {
   body.body2.body.unic-body {
     overflow-x: initial !important;
   }
+
+
+}
+
+@media screen and (max-width: 769px) {
+
+  .fab,
+  .fa-brands {
+    padding-top: unset !important;
+  }
 }
 
 * {

@@ -14,6 +14,9 @@ import Contact from './Pages/Contact';
 import CaseStudy from './Pages/CaseStudy';
 import CaseDetails from './Pages/CaseDetails';
 import BlogDetails from './Pages/BlogDetails';
+import ContentEditor from './Pages/Admin/contentEditor.jsx';
+import DataListComponnt from './Pages/Admin/DataListComponnt.jsx';
+import CreateForm from './Pages/Admin/CreateForm.jsx';
 
 function App() {
   return (
@@ -21,13 +24,13 @@ function App() {
     <>
       <BrowserRouter>
         {/* <a href="#" > */}
-          <div className="paginacontainer">
-            <div className="progress-wrap progress-wrap2">
-              <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-              </svg>
-            </div>
+        <div className="paginacontainer">
+          <div className="progress-wrap progress-wrap2">
+            <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+              <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
           </div>
+        </div>
         {/* </a> */}
         {/* <Loading /> */}
         <Header />
@@ -44,6 +47,9 @@ function App() {
           <Route path="/case-study/:caseStudySlug" Component={CaseDetails} /> */}
           <Route path="/*" Component={Home} />
           <Route path="/contact" Component={Contact} />
+          <Route path="/admin/data-list-componnt" Component={DataListComponnt} />
+          <Route path="/admin/content-editor" Component={ContentEditor} />
+          <Route path="/admin/create-content-editor" Component={CreateForm} />
         </Routes>
         {/* <ScrollToTop /> */}
         <Footer />
