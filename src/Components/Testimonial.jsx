@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import tes2_icon from "../assets/img/icons/tes2-icon.png"
@@ -46,6 +46,14 @@ const reviews = [{
 },]
 
 export default function Testimonials() {
+    const [slidesPerViewCount, setSlidesPerViewCount] = useState(3)
+
+    useEffect(() => {
+        if (window.innerWidth <= 750) {
+            setSlidesPerViewCount(1)
+        }
+    }, [])
+
     return (
         <>
 
@@ -62,9 +70,9 @@ export default function Testimonials() {
                     </div>
                     <div className="space100"></div>
 
-                    <div className="row"  data-aos="fade-up" data-aos-duration="900">
+                    <div className="row" data-aos="fade-up" data-aos-duration="900">
                         <Swiper
-                            slidesPerView={3}
+                            slidesPerView={slidesPerViewCount}
                             spaceBetween={30}
                             pagination={{
                                 clickable: true,

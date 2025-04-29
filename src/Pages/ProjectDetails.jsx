@@ -57,11 +57,11 @@ function BlogDetails({ fileDetails, }) {
                                         <h3>Our Services</h3>
                                         <ul className="features-list">
                                             {fileDetails?.data?.services?.length > 0 && fileDetails.data.services.map(service =>
-                                                <li>
-                                                    <a href="#">{service.title} <span>
+                                                <li key={service?.slugF}>
+                                                    <Link to={`/service/${service?.slug?.toLocaleLowerCase()}`}>{service.title} <span>
                                                         <i className="fa-regular fa-angle-right"></i>
                                                     </span>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             )}
                                         </ul>

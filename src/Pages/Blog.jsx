@@ -29,7 +29,7 @@ function Blogs({ fileDetails, }) {
                             <div className="col-lg-8">
                                 <div className="row">
                                     {fileDetails?.data?.blogs?.map(blog =>
-                                        <div className="col-lg-6" data-aos="fade-up" data-aos-duration="900">
+                                        <div className="col-lg-6" data-aos="fade-up" data-aos-duration="900" key={blog.slug}>
                                             <div className="blog2-box">
                                                 <div className="image">
                                                     <img src={blog.img} alt="" />
@@ -64,7 +64,7 @@ function Blogs({ fileDetails, }) {
                                     <h3>Tags</h3>
                                     <ul className="tags">
                                         {fileDetails?.data?.tags?.length > 0 && fileDetails.data.tags.map(tag =>
-                                            <li><a href="#">{tag}</a></li>
+                                            <li key={tag}><a href="#">{tag}</a></li>
                                         )}
                                     </ul>
                                 </div>
@@ -73,11 +73,11 @@ function Blogs({ fileDetails, }) {
                                     <h3>Our Services</h3>
                                     <ul className="features-list">
                                         {fileDetails?.data?.services?.length > 0 && fileDetails.data.services.map(service =>
-                                            <li>
-                                                <a href="#">{service.title} <span>
+                                            <li key={service?.slugF}>
+                                                <Link to={`/service/${service?.slug?.toLocaleLowerCase()}`}>{service.title} <span>
                                                     <i className="fa-regular fa-angle-right"></i>
                                                 </span>
-                                                </a>
+                                                </Link>
                                             </li>
                                         )}
                                     </ul>

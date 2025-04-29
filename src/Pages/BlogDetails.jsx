@@ -81,12 +81,12 @@ function BlogDetails({ fileDetails, }) {
                                     <div className="sidebar-box-area sidebar-bg mb-40">
                                         <h3>Our Services</h3>
                                         <ul className="features-list">
-                                            {fileDetails?.data?.services?.length > 0 && fileDetails.data.services?.map(service =>
-                                                <li>
-                                                    <a href="#">{service.title} <span>
+                                            {fileDetails?.data?.services?.length > 0 && fileDetails.data.services.map(service =>
+                                                <li key={service?.slugF}>
+                                                    <Link to={`/service/${service?.slug?.toLocaleLowerCase()}`}>{service.title} <span>
                                                         <i className="fa-regular fa-angle-right"></i>
                                                     </span>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             )}
                                         </ul>

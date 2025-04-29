@@ -321,9 +321,13 @@ body {
 
 @media screen and (max-width: 769px) {
 
-  .fab,
-  .fa-brands {
+  .mobile-nav .fab,
+  .mobile-nav .fa-brands {
     padding-top: unset !important;
+  }
+
+  .blog .blog2-box .heading2 {
+    margin: -72px 10px 0px 10px !important;
   }
 }
 
@@ -6087,7 +6091,7 @@ a.header__search.header-search-btn p {
 
 @media (max-width: 767px) {
   .about2 .about2-images {
-    height: 600px;
+    height: 500px;
   }
 }
 
@@ -6101,9 +6105,13 @@ a.header__search.header-search-btn p {
 @media (max-width: 767px) {
   .about2 .about2-images .image1 {
     position: absolute;
-    top: 140px;
+    top: 110px;
     left: 0;
     z-index: 9;
+  }
+
+  .solution .solution-images .image3 {
+    top: 250px;
   }
 }
 
