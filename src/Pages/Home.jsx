@@ -18,6 +18,8 @@ import hero2_shape2 from "../assets/img/shapes/hero2-shape2.png"
 import hero2_main_img1 from "../assets/img/hero/hero2-main-img1.png"
 import hero2_main_img2 from "../assets/img/hero/hero2-main-img2.png"
 
+import mainLogo1 from "../assets/img/logo/mainLogo1.png"
+
 import { connect } from "react-redux";
 import Testimonial from "../Components/Testimonial.jsx"
 
@@ -54,11 +56,11 @@ function Home({ dataList }) {
                                 <div className="col-lg-3">
                                     <div className="circle-shapes">
                                         <div className="shape1 shape-animaiton4">
-                                            <img src={hero2_shape1} alt="" />
+                                            <img src={mainLogo1} alt="" />
                                         </div>
-                                        <div className="shape2">
+                                        {/* <div className="shape2">
                                             <Link to="\services">
-                                                <img src={hero2_shape2} alt="" /></Link> </div>
+                                                <img src={hero2_shape2} alt="" /></Link> </div> */}
                                     </div>
                                 </div>
                             </div>
