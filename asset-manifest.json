@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.6c0506ee.css",
-    "main.js": "/static/js/main.df2b7905.js",
+    "main.js": "/static/js/main.b19603aa.js",
     "static/js/453.dcc6b327.chunk.js": "/static/js/453.dcc6b327.chunk.js",
     "static/media/about-tab-img.png": "/static/media/about-tab-img.69234b78dea875023fda.png",
     "static/media/blog2-img1.png": "/static/media/blog2-img1.a1f701edc77ed503c1c8.png",
     "static/media/visiton-img1.png": "/static/media/visiton-img1.b68b155e8781e331cdbe.png",
     "static/media/about2-img2.png": "/static/media/about2-img2.593946120d235a64f2b9.png",
+    "static/media/mainLogo1.png": "/static/media/mainLogo1.424633b151163077c271.png",
     "static/media/mainLogo2.png": "/static/media/mainLogo2.df85b8f62e3c0ab6eacd.png",
     "static/media/KaTeX_AMS-Regular.ttf": "/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/work2-img1.png": "/static/media/work2-img1.44e3209775444f43eb2e.png",
@@ -86,11 +87,11 @@
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
     "main.6c0506ee.css.map": "/static/css/main.6c0506ee.css.map",
-    "main.df2b7905.js.map": "/static/js/main.df2b7905.js.map",
+    "main.b19603aa.js.map": "/static/js/main.b19603aa.js.map",
     "453.dcc6b327.chunk.js.map": "/static/js/453.dcc6b327.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6c0506ee.css",
-    "static/js/main.df2b7905.js"
+    "static/js/main.b19603aa.js"
   ]
 }
